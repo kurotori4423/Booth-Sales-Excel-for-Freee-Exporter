@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Booth Sales Excel for Freee Exporter",
+    "version": "1.0",
+    "description": "Boothの売上詳細ページからデータを抽出し、Freeeにインポート可能なExcelファイルでダウンロードします。",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://manage.booth.pm/*"],
+        "js": ["xlsx.full.min.js", "content.js"]
+      }
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
